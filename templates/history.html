@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class = "table">
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Date</th>
+
+        </tr>
+        {% for n in stock %}
+            <tr>
+                <th scope="col">{{ n[0] }} </th>
+                <th scope="col">{{ n[1] }} </th>
+                <th scope="col">{{ n[2] | usd}} </th>
+                <th scope="col">{{ n[3] }} </th>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
